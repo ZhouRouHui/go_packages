@@ -5,11 +5,10 @@ import (
 	"strings"
 )
 
-func main() {
-
-	/**
-	index 相关
-	 */
+/**
+index 相关
+*/
+func aboutIndex() {
 	fmt.Println()
 	fmt.Println()
 	fmt.Println("index 相关函数 --------------------- start --------------------")
@@ -43,11 +42,12 @@ func main() {
 	fmt.Printf("lastIndexByteRes = %d\n", lastIndexByteRes)
 
 	fmt.Println("index 相关函数 --------------------- end --------------------")
+}
 
-
-	/**
-	contains 相关
-	 */
+/**
+contains 相关
+*/
+func aboutContains() {
 	fmt.Println()
 	fmt.Println()
 	fmt.Println("contains 相关函数 --------------------- start --------------------")
@@ -66,11 +66,12 @@ func main() {
 	fmt.Printf("containsRuneRes = %t\n", containsRuneRes)
 
 	fmt.Println("contains 相关函数 --------------------- end --------------------")
+}
 
-
-	/**
-	split 相关函数
-	 */
+/**
+split 相关函数
+*/
+func aboutSplit() {
 	fmt.Println()
 	fmt.Println()
 	fmt.Println("split 相关函数 --------------------- start --------------------")
@@ -126,11 +127,13 @@ func main() {
 	fmt.Println()
 
 	fmt.Println("split 相关函数 --------------------- end --------------------")
+}
 
+/**
+trim 相关函数
+*/
+func aboutTrim() {
 
-	/**
-	trim 相关函数
-	*/
 	fmt.Println()
 	fmt.Println()
 	fmt.Println("trim 相关函数 --------------------- start --------------------")
@@ -161,11 +164,12 @@ func main() {
 	fmt.Printf("trimSuffixRes = %s\n", trimSuffixRes)
 
 	fmt.Println("trim 相关函数 --------------------- end --------------------")
+}
 
-
-	/**
-	其他函数
-	*/
+/**
+其他函数
+*/
+func others() {
 	fmt.Println()
 	fmt.Println()
 	fmt.Println("其他函数 --------------------- start --------------------")
@@ -218,7 +222,7 @@ func main() {
 		if r == 'a' {
 			return -1
 		}
-		if r == 'b'{
+		if r == 'b' {
 			r = 'z'
 		}
 		return r
@@ -226,4 +230,21 @@ func main() {
 	fmt.Printf("mapRes = %s\n", mapRes)
 
 	fmt.Println("其他函数 --------------------- end --------------------")
+}
+
+func main() {
+	// index 相关
+	aboutIndex()
+
+	// contains 相关
+	aboutContains()
+
+	// split 相关
+	aboutSplit()
+
+	// trim 相关
+	aboutTrim()
+
+	// 其他函数
+	others()
 }
