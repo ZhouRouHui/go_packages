@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"go_packages/external/ent/ent/car"
 	"go_packages/external/ent/ent/group"
+	"go_packages/external/ent/ent/test"
 	"go_packages/external/ent/ent/user"
 
 	"entgo.io/ent"
@@ -33,6 +34,7 @@ func columnChecker(table string) func(string) error {
 	checks := map[string]func(string) bool{
 		car.Table:   car.ValidColumn,
 		group.Table: group.ValidColumn,
+		test.Table:  test.ValidColumn,
 		user.Table:  user.ValidColumn,
 	}
 	check, ok := checks[table]

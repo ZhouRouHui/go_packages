@@ -12,5 +12,8 @@ type Car func(*sql.Selector)
 // Group is the predicate function for group builders.
 type Group func(*sql.Selector)
 
+// Test is the predicate function for test builders.
+type Test func(*sql.Selector)
+
 // User is the predicate function for user builders.
 type User func(*sql.Selector)

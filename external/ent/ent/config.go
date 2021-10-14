@@ -26,6 +26,7 @@ type config struct {
 type hooks struct {
 	Car   []ent.Hook
 	Group []ent.Hook
+	Test  []ent.Hook
 	User  []ent.Hook
 }
 
