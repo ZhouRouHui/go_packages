@@ -17,6 +17,7 @@ func main() {
 	})
 	if err != nil {
 		fmt.Println("tail file err:", err)
+		return
 	}
 
 	var msg *tail.Line // 一行日志
