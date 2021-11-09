@@ -141,11 +141,11 @@ func aboutTrim() {
 	trimRes := strings.Trim("trim func test", "t")
 	fmt.Printf("trimRes = %s\n", trimRes)
 
-	// 删除参数一头部的参数二的内容
+	// strings.TrimLeft 其实就是把 cutset 里面的字符串拆分成字符，然后从左往右，逐个比对字符串中的每个字符，直到遇到没有在 cutset 中出现的字符。
 	trimLeftRes := strings.TrimLeft("trim left func test", "t")
 	fmt.Printf("trimLeftRes = %s\n", trimLeftRes)
 
-	// 删除参数一尾部的参数二的内容
+	// strings.TrimRight 其实就是把 cutset 里面的字符串拆分成字符，然后从右往左，逐个比对字符串中的每个字符，直到遇到没有在 cutset 中出现的字符。
 	trimRightRes := strings.TrimRight("trim right func test", "t")
 	fmt.Printf("trimRightRes = %s\n", trimRightRes)
 
