@@ -1,0 +1,62 @@
+// 指定版本，默认是 proto2
+syntax = "proto3";
+
+// 指定当前文件在 proto 系统中的包名，对最终生成的 pb.go 文件不影响
+package protobuf;
+
+// go_package 定义编译后生成的 pb.go 文件的路径及报名
+option go_package = "./;pb";
+
+// 定义消息体
+message Student {
+  // 数字表示消息成员的编号
+  // 编号起始位置可以不从 1 开始，但是不能重复
+  // 编号不能使用 19000 - 19999 之间的数字
+  int32 age = 1;
+  string name = 2;
+
+  // 消息体可以嵌套
+  People p = 3;
+
+  // repeated 定义数组
+  repeated int32 score = 4;
+
+  // 嵌套枚举类型
+  Week w = 5;
+
+  // oneof 定义联合体，oneof 一次只从联合体里面设置一个字段
+  oneof data {
+    string teacher = 6;
+    string class = 7;
+  }
+}
+
+// enum 定义枚举类型
+// proto3 中枚举值必须从 0 开始
+enum Week {
+  Monday = 0;
+  Tuesday = 1;
+}
+
+message People {
+  int32 weight = 1;
+}
+
+/**
+protobuf 可以注册 rpc 服务，语法：
+service 服务名 {
+  rpc 函数名(参数: 消息体) returns (返回值: 消息体)
+}
+参数和返回值必须是 message 定义好的消息体类型
+ */
+service hello {
+  rpc HelloWorld(Params) returns (Resp);
+}
+
+message Params {
+  string name = 1;
+}
+
+message Resp {
+  int32 age = 2;
+}
